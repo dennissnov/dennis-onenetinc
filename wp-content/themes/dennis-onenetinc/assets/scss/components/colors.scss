@@ -1,0 +1,34 @@
+$colors: (
+	primary: #FF7A45,
+	secondary: #2b3559,
+	tertiary: #67DE75,
+	'white': #ffffff,
+	'black': #000000,
+	'complete-white':#f8f8f4,
+	'complete-marine':#6e6d85,
+);
+
+// generate classes
+@each $color, $value in $colors {
+	.#{$color} {
+		color: $value;
+	}
+	.bg-#{$color} {
+		background-color: $value;
+	}
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 9999px;
+	display: flex;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+	@each $color, $value in $colors {
+		--#{$color}: #{$value};
+		--color-#{$color}: #{$value};
+	}
+}

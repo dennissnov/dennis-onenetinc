@@ -1,0 +1,81 @@
+$container-max-widths: (
+	sm: 540px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1440px,
+);
+
+// Gutter width
+// $row-gutter: 30px;
+
+// @include nonDesktop {
+// 	 $row-gutter: 20px;
+// }* 2
+
+@mixin media-breakpoint($breakpoint) {
+	@if $breakpoint == 'sm' {
+		@media (min-width: map-get($container-max-widths, sm)) {
+			@content;
+		}
+	} @else if $breakpoint == 'md' {
+		@media (min-width: map-get($container-max-widths, md)) {
+			@content;
+		}
+	} @else if $breakpoint == 'lg' {
+		@media (min-width: map-get($container-max-widths, lg)) {
+			@content;
+		}
+	} @else if $breakpoint == 'xl' {
+		@media (min-width: map-get($container-max-widths, xl)) {
+			@content;
+		}
+	} @else {
+		@error "Invalid breakpoint: #{$breakpoint}.";
+	}
+}
+
+// Container
+.container,
+.container-fluid {
+	width: 100%;
+	
+    padding-left:  calc(calculateColumn(1, 8) + var(--row-gutter) / 2);
+    padding-right: calc(calculateColumn(1, 8) + var(--row-gutter) / 2);
+	@include tablet {
+        padding-left: 60px;
+        padding-right: 60px;
+	}
+
+	@include mobile {
+		padding-left: 20px;
+		padding-right: 20px;
+	
+	}
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	// max-width: 1440px;
+}
+
+// Row
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: calc(var(--row-gutter) / -2);
+	margin-left: calc(var(--row-gutter) / -2);
+}
+
+$numberColumn: 12;
+@for $i from 1 through $numberColumn {
+	.col-#{$i} {
+		@include createColumn($i, $numberColumn);
+	}
+	.col-#{$i}-sm {
+		@include createColumn($i, $numberColumn);
+	}
+	.col-#{$i}-md {
+		@include createColumn($i, $numberColumn);
+	}
+}

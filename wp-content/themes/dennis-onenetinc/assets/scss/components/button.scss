@@ -1,0 +1,24 @@
+.btn {
+	display: inline-flex;
+	justify-content: flex-start;
+	flex-grow: 0;
+	background-color: var(--color-secondary);
+	color: var(--color-white);
+	border-radius: 99px;
+	padding: 0;
+	text-decoration: none;
+	position: relative;
+
+	.text {
+		background-color: var(--color-tertiary);
+		color: var(--color-secondary);
+		padding: 16px;
+		border-radius: 99px;
+	}
+
+	.icon {
+		padding: 10px 16px;
+		display: flex;
+		align-items: center;
+	}
+}

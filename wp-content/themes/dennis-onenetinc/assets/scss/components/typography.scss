@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+li,
+ul,
+ol,
+button,
+a {
+	font-family: 'Poppins', sans-serif;
+}
+h1 {
+	color: var(--color-secondary, #2b3559);
+	-webkit-text-stroke-width: 1;
+	-webkit-text-stroke-color: #000;
+	font-kerning: none;
+	-webkit-text-rendering: optimizeSpeed;
+	text-rendering: optimizeSpeed;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	// font-size: calculateRem(32px);
+	font-size: clamp(20px, calc(2vw + 10px), 32px);
+
+	//using clamp
+	// font-size: clamp(20px, 50%, 32px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 115%; /* 36.8px */
+	letter-spacing: -0.816px;
+	font-family: Poppins;
+
+	@include tablet {
+		// font-size: calculateRem(22px);
+		font-size: clamp(20px, calc(1.833vw + 4px), 22px);
+		line-height: 127.273%;
+	}
+
+	@include mobile {
+		// font-size: calculateRem(20px);
+		font-size: clamp(16px, calc(1.667vw + 2px), 20px);
+		line-height: 120%;
+	}
+}
+
+h2 {
+	color: var(--color-secondary, #2b3559);
+	// font-size: calculateRem(64px);
+	font-size: clamp(2rem, 7vw, 4rem);
+	font-family: Poppins;
+
+	font-style: normal;
+	font-weight: 600;
+	line-height: 110%; /* 70.4px */
+	letter-spacing: -0.979px;
+
+	@include tablet {
+		letter-spacing: -0.662px;
+	}
+
+	@include mobile {
+		font-size: 26px;
+		line-height: 124%;
+	}
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.counter {
+	font-size: calculateRem(111.612px);
+	color: var(--color-tertiary, #2eda50);
+	font-size: clamp(3rem, 10vw, 5rem);
+
+	font-weight: 600;
+	line-height: 105%; /* 117.193px */
+
+	@include mobile {
+		// font-size: calculateRem(58px);
+		font-size: clamp(2rem, 7vw, 3rem);
+
+		line-height: 105%;
+	}
+}

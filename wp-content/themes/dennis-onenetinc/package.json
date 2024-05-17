@@ -1,0 +1,47 @@
+{
+  "name": "dennis-onenetinc",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "cross-env nyc ava --verbose --serial",
+    "posttest": "cross-env nyc report --reporter=html"
+  },
+  "author": "Dennis Novriandi",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/compat-data": "7.19.4",
+    "@babel/core": "7.19.6",
+    "@babel/generator": "7.19.6",
+    "@babel/helper-compilation-targets": "7.19.3",
+    "@babel/helper-create-class-features-plugin": "7.19.0",
+    "@babel/helper-module-transforms": "7.19.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "browser-sync": "^2.26.12",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "cross-env": "^5.2.0",
+    "fs": "0.0.1-security",
+    "glob-all": "^3.2.1",
+    "laravel-mix": "^5.0.0",
+    "laravel-mix-purgecss": "^4.2.0",
+    "laravel-mix-tailwind": "^0.1.0",
+    "laravel-mix-versionhash": "1.0.8",
+    "resolve-url-loader": "2.3.1",
+    "sass": "^1.26.11",
+    "sass-loader": "7.*",
+    "tailwindcss": "^2.1.2",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.0.45"
+  }
+}
